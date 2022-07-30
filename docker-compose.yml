@@ -1,0 +1,12 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  iotproject301:
+    image: iotproject301
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 7011:7011
