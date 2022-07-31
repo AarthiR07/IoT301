@@ -4,7 +4,7 @@ trigger:
       - aarthi01 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'aarthi'
+  dockerRegistryServiceConnection: 'testdocker'
   imageRepository: 'aarthi11'
   containerRegistry: 'prdctmntc.azurecr.io'
   dockeruser: 'prdctmntc'
