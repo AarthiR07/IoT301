@@ -6,6 +6,7 @@
 trigger:
 - master
 
+
 pool:
   vmImage: ubuntu-latest
 
@@ -15,7 +16,8 @@ steps:
       packageType: 'sdk'
       version: 
 
-
+images:
+- name: aarthiimg
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
