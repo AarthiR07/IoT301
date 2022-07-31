@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - aarthi01 
+      - azure-pipelines 
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'testdocker'
@@ -23,13 +23,14 @@ stages:
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
-        containerRegistry: 'aarthi'
-        repository: '$(imageRepository)'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
-        tags: 'latest,$(tag)'
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          latest,$(tag)
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Pipeline.Workspace)'
-        artifact: 'aarthiart'
+        artifact: 'builds'
         publishLocation: 'pipeline'
