@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetnxt
+  namespace: aarthikube
+  labels:
+    app: dotnetnxt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetnxt
+  template:
+    metadata:
+      labels:
+        app: dotnetnxt
+    spec:
+      containers:
+        - name: dotnetnxt
+          image: prdctmntc.azurecr.io/aarthi11:#{Release.Artifacts.builds.BuildId}#
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 7011
+            - containerPort: 7011
+      imagePullSecrets:
+        - name: prdctmntc
+--- 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnetnxt
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http5
+      port: 7011
+    - name: http51
+      port: 7011
+  selector:
+    app: dotnetnxt
