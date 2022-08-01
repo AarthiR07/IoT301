@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dotnetnxt
-          image: prdctmntc.azurecr.io/aarthi11:#{Release.Artifacts.builds.BuildId}#
+          image: prdctmntc.azurecr.io/aarthi11:#{Release.Artifacts.aarthibuilds.BuildId}#
           imagePullPolicy: Always
           ports:
             - containerPort: 7011
