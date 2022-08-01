@@ -17,14 +17,17 @@ spec:
     spec:
       containers:
         - name: dotnetnxt
-          image: prdctmntc.azurecr.io/aarthi11:#{Release.Artifacts.aarthibuilds.BuildId}#
+          image: prdctmntc.azurecr.io/ananya:#{Release.Artifacts.aarthibuilds.BuildId}#
+         
           imagePullPolicy: Always
+
           ports:
-            - containerPort: 7011
-            - containerPort: 7011
+            - containerPort: 5000
+            - containerPort: 5001
       imagePullSecrets:
         - name: prdctmntc
 --- 
+
 ---
 apiVersion: v1
 kind: Service
@@ -34,8 +37,8 @@ spec:
   type: LoadBalancer
   ports:
     - name: http5
-      port: 7011
+      port: 5000
     - name: http51
-      port: 7011
+      port: 5001
   selector:
     app: dotnetnxt
