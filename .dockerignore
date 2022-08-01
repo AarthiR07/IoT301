@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 **/.classpath
 **/.dockerignore
 **/.env
@@ -23,29 +23,4 @@
 **/secrets.dev.yaml
 **/values.dev.yaml
 README.md
-=======
-**/.classpath
-**/.dockerignore
-**/.env
-**/.git
-**/.gitignore
-**/.project
-**/.settings
-**/.toolstarget
-**/.vs
-**/.vscode
-**/*.*proj.user
-**/*.dbmdl
-**/*.jfm
-**/bin
-**/charts
-**/docker-compose*
-**/compose*
-**/Dockerfile*
-**/node_modules
-**/npm-debug.log
-**/obj
-**/secrets.dev.yaml
-**/values.dev.yaml
-README.md
->>>>>>> dd1f05fb1117b6428a272dc81c80cb304ea694b1
+
